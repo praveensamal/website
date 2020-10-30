@@ -10,7 +10,11 @@ h1{
 	padding: 20px;
 }
 
-.form{
+.abc{
+	padding-left: 20%;
+	padding-right: 20%;
+}
+/*.form{
 
 	background: #2d85b0;
 	width: 500px;
@@ -50,3 +54,15 @@ h1{
 	box-sizing: border-box;
 	font-size: 14px;
 }
+
+.form-container button{
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}*/

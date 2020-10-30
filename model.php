@@ -80,6 +80,10 @@ if(isset($_POST['model']))
             <tbody>  
                 	<?php  
                 	$cur_date= date("Y-m-d");
+                	$num=mysqli_num_rows($result);
+             
+                if($num > 0)
+                {	
                    while ($row = mysqli_fetch_array($result)) {  
                    	if($row['end_date']<$cur_date)
 		        		{
@@ -108,7 +112,17 @@ if(isset($_POST['model']))
 						
                 </tr>
                 <?php  
-                };  
+                }
+                }
+                else
+		        {
+		        		if($model != "")
+		        		{
+		        			echo '<script language="javascript">';
+                        	echo 'alert("Invalid Model.");';
+                        	echo '</script>';
+                    	}
+		        }   
                 ?>  
             </tbody> 
             </thead>

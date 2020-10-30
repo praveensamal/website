@@ -8,7 +8,7 @@
 
 	<style>
 		body{
-			background-color: grey;
+			background-color: #fff;
 		}
 
 		table,th,td{
@@ -32,13 +32,13 @@
 <body>
 	<center>
 
-		<h1> Search By Sample ID </h1>
+		<h1> </h1>
 
 		<div class="container">
 			<button onClick="javascript:history.go(-1)" style="float: left;"><i class="fa fa-arrow-left" style="font-size:36px;"></i></button><br><br>
 			<form action="" method="POST">
-				<input type="text" name="sample" class="btn"  placeholder="Sample ID" style="background-color: #fff;">
-				<input type="submit" name="search" class="btn" value="search"  style="background-color: #fff;">
+				<input type="text" name="sample" class="btn"  placeholder="Sample ID" style="background-color: #fff;border:2px solid black;">
+				<input type="submit" name="search" class="btn" value="search"  style="background-color: #fff;border:2px solid black;">
 			</form>
 
 			<table>
@@ -70,19 +70,21 @@
 
 		        	$query = "SELECT * FROM `register` where sample='$sample' ";
 		        	$query_run = mysqli_query($con,$query);
-
-		        	while($row = mysqli_fetch_array($query_run))
+		        	$num=mysqli_num_rows($query_run);
+		        	
+		        	if($num > 0)
 		        	{
-		        		if($row['end_date']<$cur_date)
+		        		
+		            	while($row = mysqli_fetch_array($query_run))
 		        		{
-		        			$Available= "Available";
-		        		}
-		        		else
-		        		{
-		        			$Available= "Not available";
-		        		}
-
-
+		        			if($row['end_date']<$cur_date)
+		        			{
+		        				$Available= "Available";
+		        			}
+		        			else
+		        			{
+		        				$Available= "Not available";
+		        			}
 		        		?>
 
 		        		<tr>
@@ -106,7 +108,17 @@
 		        		<?php
 
 
-		        	} 
+		        		}
+		        	}
+		        	 else
+		        {
+		        		if($sample != "")
+		        		{
+		        			echo '<script language="javascript">';
+                        	echo 'alert("Invalid Sample ID.");';
+                        	echo '</script>';
+                    	}
+		        }       
 		        }
 
 

@@ -59,6 +59,8 @@ if(isset($_POST['dropdown']))
                 <option value = "MSPG"> MSPG </option>
                 <option value = "Network Speaker"> Network Speaker </option>
                 <option value = "Test Phone"> Test Phone </option>
+                <option value = "Storage Devices"> Storage Devices </option>
+                <option value = "Other Devices"> Other Devices </option>
                 </select> <br><br>
 				<input type="submit" name="search" class="btn" value="search">
 			</form>
@@ -85,7 +87,10 @@ if(isset($_POST['dropdown']))
 		    <thead>  
             <tbody>  
                 	<?php 
-                	$cur_date= date("Y-m-d"); 
+                	$cur_date= date("Y-m-d");
+                	$num=mysqli_num_rows($result);
+                if($num > 0)
+                {	 
                    while ($row = mysqli_fetch_array($result)) {
                    	if($row['end_date']<$cur_date)
 		        		{
@@ -115,7 +120,17 @@ if(isset($_POST['dropdown']))
 						
                 </tr>
                 <?php  
-                };  
+                }
+                }
+                else
+		        {
+		        		if($dropdown != "")
+		        		{
+		        			echo '<script language="javascript">';
+                        	echo 'alert("No such device present.");';
+                        	echo '</script>';
+                    	}
+		        }       
                 ?>  
             </tbody> 
             </thead>

@@ -79,7 +79,10 @@ if(isset($_POST['size']))
 		    <thead>  
             <tbody>  
                 	<?php
-                	$cur_date= date("Y-m-d");   
+                	$cur_date= date("Y-m-d"); 
+                	$num=mysqli_num_rows($result);
+                if($num > 0)
+                {	  
                    while ($row = mysqli_fetch_array($result)) { 
                    	if($row['end_date']<$cur_date)
 		        		{
@@ -110,7 +113,17 @@ if(isset($_POST['size']))
 						
                 </tr>
                 <?php  
-                };  
+                }
+                } 
+                else
+		        {
+		        		if($size != "")
+		        		{
+		        			echo '<script language="javascript">';
+                        	echo 'alert("Invalid Size.");';
+                        	echo '</script>';
+                    	}
+		        }   
                 ?>  
             </tbody> 
             </thead>

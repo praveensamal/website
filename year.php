@@ -79,7 +79,10 @@ if(isset($_POST['year']))
 		    <thead>  
             <tbody>  
                 	<?php 
-                	$cur_date= date("Y-m-d"); 
+                	$cur_date= date("Y-m-d");
+                	$num=mysqli_num_rows($result);
+                if($num > 0)
+                {	 
                    while ($row = mysqli_fetch_array($result)) {
                    if($row['end_date']<$cur_date)
 		        		{
@@ -109,7 +112,17 @@ if(isset($_POST['year']))
 						
                 </tr>
                 <?php  
-                };  
+                }
+                }
+                else
+		        {
+		        		if($year != "")
+		        		{
+		        			echo '<script language="javascript">';
+                        	echo 'alert("Invalid Year.");';
+                        	echo '</script>';
+                    	}
+		        }     
                 ?>  
             </tbody> 
             </thead>

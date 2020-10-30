@@ -31,7 +31,7 @@ if(!isset($_SESSION['valid'])){
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">My Store Room </a>
+      <a class="navbar-brand" href="#" style="color: #034EA2; font-family: Helvetica Black,sans-serif; font-weight:bold;"> SAMSUNG </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -68,10 +68,15 @@ if(!isset($_SESSION['valid'])){
             </div>
           </li>
 
-          <li class="nav-item">
+          
+        </ul>
+         <div class="navbar-collapse collapse w-50 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
-        </ul>
+            </ul>
+          </div>
       </div>
     </nav>
 

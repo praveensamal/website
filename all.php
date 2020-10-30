@@ -3,7 +3,7 @@
 <div class="container">
 	<button onClick="javascript:history.go(-1)"><i class="fa fa-arrow-left" style="font-size:36px"></i></button><br><br>
 	<div class="table-responsive-sm">
-<table class="table table-bordered">
+<table class="table table-bordered" style="border:solid;">
 	<thead>
 		<tr>
 			<th> S_No </th>
@@ -49,7 +49,7 @@
 			<td><?php echo $row['s_no']; ?></td>
 			<td><?php echo $row['sample']; ?></td>
 			<td><?php echo $row['dropdown']; ?></td>
-			<td><?php echo $row['model']; ?></td>
+			<td style="color: blue";><?php echo $row['model']; ?></td>
 			<td><?php echo $row['year']; ?></td>
 			<td><?php echo $row['size']; ?></td>
 			<td><?php echo $row['owner']; ?></td>
@@ -85,5 +85,7 @@
 .dataTables_paginate a{
 	padding: 2.5px;
 }
+
+
 
 </style>	

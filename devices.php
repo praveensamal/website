@@ -22,19 +22,12 @@ if(!isset($_SESSION['valid'])){
    
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-   <style type="text/css">
-     .praveen{
-      text-align: center;
-     }
-     .samal{
-      text-align: center;
-     }
-   </style>
+
 </head>
 <body>
-
+  
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">My Store Room </a>
+      <a class="navbar-brand" href="#" style="color: #034EA2; font-family: Helvetica Black,sans-serif; font-weight:bold;"> SAMSUNG </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -71,106 +64,82 @@ if(!isset($_SESSION['valid'])){
             </div>
           </li>
 
-          <li class="nav-item">
+        </ul>
+
+         <div class="navbar-collapse collapse w-50 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
+            </ul>
+          </div>
         </ul>
       </div>
     </nav>
 
-	<h1> Devices Registeration </h1>
-	<div class="container" align="center">
-		<div class="form">
-			<form action="device.php" class="register-form" method="post">
-        <div class="row">
-          <div class="col-md-6">
-				    <label class="praveen"> Sample No. : </label>
-          </div>
-          <div class="col-md-6">  
-				    <input class="samal" type="text" name="sample" placeholder="Sample" > <br><br>
-          </div>  
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Device Type : </label>
-        </div>
-          <div class="col-md-6">  
-				<select class="samal" name = "dropdown" id="dropdown">
-                <option value = "Panel" selected> Panel </option>
-                <option value = "Soundbar"> Soundbar </option>
-                <option value = "PDM"> PDM </option>
-                <option value = "MSPG"> MSPG </option>
-                <option value = "Network Speaker"> Network Speaker </option>
-                <option value = "Test Phone"> Test Phone </option>
-                </select> <br><br><br>
-        </div>  
-        </div>
-         <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Model :</label>
-        </div>
-          <div class="col-md-6">  
-				<input class="samal" type="text" name="model" placeholder="Model"><br><br>
-        </div>  
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-				<label class="praveen" > Year :</label>
-        </div>
-          <div class="col-md-6">  
-				<input class="samal" type="text" name="year" placeholder="Year"><br><br>
-        </div>  
-        </div>
-         <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Size :</label>
-        </div>
-          <div class="col-md-6"> 
-				<input class="samal" type="text" name="size" placeholder="Size(in inches)"><br><br>
-        </div>  
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Owner Name :</label>
-        </div>
-          <div class="col-md-6"> 
-				<input class="samal" type="text" name="owner" placeholder="Owner Name"><br><br>
-        </div>  
-        </div>
-         <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Last User :</label>
-        </div>
-          <div class="col-md-6"> 
-				<input class="samal" type="text" name="user" placeholder="Last User"><br><br>
-        </div>  
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Last Location :</label>
-        </div>
-          <div class="col-md-6"> 
-				<input class="samal" type="text" name="loc" placeholder="Last Location"><br><br>
-         </div>  
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-				<label class="praveen"> Remarks(If Any) :</label>
-        </div>
-          <div class="col-md-6"> 
-				<input class="samal" type="text" name="remarks" placeholder="Remarks"><br><br>
-         </div>  
-        </div>
-				<button> Register </button>
+<br>
+<br>
+<div class="container">
+
+	<!-- Default form contact -->
+<form class="text-center border border-light abc" action="device.php" method="post">
+
+    <p class="h4 mb-4" style="font-size:40px;"> Device Registeration </p>
+
+    <!-- Sample ID -->
+    <input type="text" id="defaultContactFormSample" class="form-control mb-4" name="sample" placeholder="Sample ID">
+
+    <!-- Device Type -->
+    <select class="browser-default custom-select mb-4" name="dropdown" id="dropdown">
+        <option value="" disabled>Choose option</option>
+        <option value="1" selected>Panel</option>
+        <option value="2">Soundbar</option>
+        <option value="3">PDM</option>
+        <option value="4">MSPG</option>
+        <option value="5">Network Speaker</option>
+        <option value="6">Test Phone</option>
+        <option value="7">Storage Devices</option>
+        <option value="8">Other Devices</option>
+    </select>
+
+    <!-- Model -->
+    <input type="text" id="defaultContactFormModel" class="form-control mb-4" name="model" placeholder="Model">
 
 
-				
+    <!-- Year -->
+    <input type="text" id="defaultContactFormYear" class="form-control mb-4" name="year" placeholder="Year">
 
 
-			</form>
+    <!-- Size -->
+    <input type="text" id="defaultContactFormSize" class="form-control mb-4" name="size" placeholder="Size(in inches)">
 
-			
-		</div>
-	</div>
+   
+    <!-- Owner Name -->
+    <input type="text" id="defaultContactFormOwner" class="form-control mb-4" name="owner" placeholder="Owner Name">
+
+
+    
+    <!-- Last User -->
+    <input type="text" id="defaultContactFormUser" class="form-control mb-4" name="user" placeholder="Last User">
+
+
+    <!-- Last Location -->
+    <input type="text" id="defaultContactFormLocation" class="form-control mb-4" name="loc" placeholder="Last Location">
+
+
+    <!-- Remarks(If Any) -->
+    <input type="text" id="defaultContactFormRemarks" class="form-control mb-4" name="remarks" placeholder="Remarks">
+
+
+   
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Send</button>
+
+</form>
+<!-- Default Device Type Form -->
+</div>
+<br>
+<br>
 </body>
 </html>

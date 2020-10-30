@@ -24,7 +24,7 @@ if(!isset($_SESSION['valid'])){
 	<style>
 		body{
 
-			background-color: whitesmoke;
+			background-color: white;
 		}
 
 		input{
@@ -38,25 +38,34 @@ if(!isset($_SESSION['valid'])){
 			box-shadow: 1px 1px 2px 1px grey;
 		}
 
+    .abc{
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .container{
+      padding-top: 35px;
+    }
+
 
 	</style>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">My Store Room </a>
+      <a class="navbar-brand" href="#" style="color: #034EA2; font-family: Helvetica Black,sans-serif; font-weight:bold;"> SAMSUNG </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="home.php">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Devices.php">Register Devices</a>
           </li> 
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Update Devices Status
             </a>
@@ -80,22 +89,32 @@ if(!isset($_SESSION['valid'])){
             </div>
           </li>
 
-          <li class="nav-item">
+          </ul>
+
+         <div class="navbar-collapse collapse w-50 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
+            </ul>
+          </div>
         </ul>
       </div>
     </nav>
 	<center>
-		
-		<h1> Update Time Period </h1>
 
-		<form action="updateperiod.php" method="POST">
+     <div class="container">
+		
+		<h2> Update Time Period </h2>
+    <br>
+
+		<form action="updateperiod.php" method="POST" class="text-center border border-light abc">
 			<input type="text" name="sample" placeholder="Sample ID"><br>
 			<input type="text" name="period" placeholder="Time Period(in numeric value )"><br>
-			<input type="submit" name="update" value="UPDATE DATA"/>
+			<input type="submit" class="btn btn-secondary" name="update" value="UPDATE DATA"/>
 
 		</form>
+  </div>
 	</center>
 
 </body>
